@@ -126,7 +126,7 @@ def test_widgets_statement_count():
     """widgets.gps has exactly 15 statement lines."""
     result = parse_file(WIDGETS)
     stmts = [l for l in result.lines if l.kind == "statement"]
-    assert len(stmts) == 17, f"Expected 17 statements, got {len(stmts)}"
+    assert len(stmts) == 15, f"Expected 15 statements, got {len(stmts)}"
 
 
 # ---------------------------------------------------------------------------
@@ -148,4 +148,4 @@ def test_inspect_statement_count():
     """inspect.gps has exactly 17 statement lines."""
     result = parse_file(INSPECT)
     stmts = [l for l in result.lines if l.kind == "statement"]
-    assert len(stmts) == 20, f"Expected 20 statements, got {len(stmts)}"
+    assert len(stmts) == 17, f"Expected 17 statements, got {len(stmts)}"

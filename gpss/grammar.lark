@@ -1,16 +1,17 @@
 start: statement+
 statement: comment_stmt | blank_stmt | labeled_stmt | unlabeled_stmt
-comment_stmt: COMMENT NEWLINE
-blank_stmt: NEWLINE
-labeled_stmt: LABEL WS KEYWORD (WS operand_list)? NEWLINE
+comment_stmt:   COMMENT NEWLINE
+blank_stmt:     NEWLINE
+labeled_stmt:   LABEL WS KEYWORD (WS operand_list)? NEWLINE
 unlabeled_stmt: KEYWORD (WS operand_list)? NEWLINE
-operand_list: operand ("," operand)*
+operand_list: slot ("," slot)*
+slot: operand?
 operand: NUMBER | NAME
-LABEL: /[A-Z$#@][A-Z0-9$#@]{0,7}/
+LABEL:   /[A-Z$#@][A-Z0-9$#@]{0,7}/
 KEYWORD: /[A-Z]+/
-NAME: /[A-Z][A-Z0-9]*/
-NUMBER: /[0-9]+(\.[0-9]+)?/
-WS: /[ \t]+/
+NAME:    /[A-Z][A-Z0-9]*/
+NUMBER:  /[0-9]*\.[0-9]+|[0-9]+/
+WS:      /[ \t]+/
 COMMENT: /\*[^\n]*/
 NEWLINE: /\r?\n/
 %ignore /[ \t]+(?=\n)/
