@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# GPSS/H oracle output — never commit these
+*.lis
+*.LIS
+*.BAK
+
+# iCloud sync test sentinel
+icloud_sync_test.txt
+
+# Conda/virtual environments
+.env
+.venv
+env/
