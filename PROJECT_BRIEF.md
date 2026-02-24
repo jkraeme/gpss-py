@@ -168,8 +168,12 @@ git push
     tests/
       __init__.py
       test_parser.py
-    PROJECT_BRIEF.md <- this file
+    PROJECT_BRIEF.md <- live repo copy
     .gitignore
+
+~/gpssh_docs/        <- personal archive (outside repo)
+  GPSSH_PY_Project_Brief_v1.md  (not created — pre-archive sessions)
+  GPSSH_PY_Project_Brief_v6.md  <- current
 ```
 
 ---
@@ -445,7 +449,25 @@ Updated: End of Session 5 — February 24, 2026
 | Transpiler | NEXT ACTION |
 | Jupyter Magic | PENDING |
 
-### 9.1 Immediate Next Actions — In Priority Order
+### 9.1 Deploy This Brief
+
+Run these commands to deploy every new version of this brief:
+
+```bash
+# 1. Copy to GitHub repo (public record):
+cp ~/Downloads/PROJECT_BRIEF.md ~/gpss_dev/gpss_py/PROJECT_BRIEF.md
+
+# 2. Copy to personal archive (increment version number):
+cp ~/Downloads/PROJECT_BRIEF.md ~/gpssh_docs/GPSSH_PY_Project_Brief_v6.md
+
+# 3. Commit and push:
+cd ~/gpss_dev/gpss_py
+git add PROJECT_BRIEF.md
+git commit -m "Update PROJECT_BRIEF.md to v6.0 — Session 5 complete"
+git push
+```
+
+### 9.2 Immediate Next Actions — In Priority Order
 
 1. Begin transpiler — JOEBARB.GPS to SimPy code. Target blocks for
    Phase 1: GENERATE, ADVANCE, SEIZE, RELEASE, TERMINATE, START, END.
@@ -521,6 +543,8 @@ Updated: End of Session 5 — February 24, 2026
 - All four classic models parse clean: 15/15 PASSING
 - Stray gpss/test_parser.py committed accidentally — removed in f57a391
 - Three commits pushed: beaecbf, 654757c, f57a391
+- Personal archive directory created: ~/gpssh_docs/
+- Deploy procedure added to Section 9.1 of all future briefs
 
 ---
 
